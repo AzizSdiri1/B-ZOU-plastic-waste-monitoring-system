@@ -1,0 +1,16 @@
+path: /home/mohamedas/Desktop/app/taco_yolo_project/data/taco_yolo_10_class_original
+train: train
+val: valid
+test: test
+names:
+- bottle
+- bottle cap
+- can
+- battery
+- cup
+- ' blister pack'
+- Carton
+- aluminum foil
+- Lid
+- Other
+nc: 10

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLOv8 Image Detection</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        .container { max-width: 800px; margin: auto; }
+        .error { color: red; }
+        img { max-width: 100%; height: auto; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Image for YOLOv8 Detection</h1>
+        <form method="post" enctype="multipart/form-data" action="/upload">
+            <input type="file" name="file" accept=".png,.jpg,.jpeg">
+            <input type="submit" value="Upload and Detect">
+        </form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        {% if result_image %}
+            <h2>Result</h2>
+            <img src="{{ url_for('static', filename='output/' + result_image) }}" alt="Detection Result">
+        {% endif %}
+    </div>
+</body>
+</html>

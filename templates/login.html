@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+        <div id="login-form" class="space-y-4">
+            <input type="email" id="email" placeholder="Email" class="w-full p-2 border rounded">
+            <input type="password" id="password" placeholder="Password" class="w-full p-2 border rounded">
+            <button onclick="login()" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Login</button>
+        </div>
+        <div id="otp-form" class="space-y-4 hidden">
+            <input type="text" id="otp" placeholder="Enter 6-digit OTP" class="w-full p-2 border rounded">
+            <button onclick="verifyLoginOTP()" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Verify OTP</button>
+            <button onclick="resendOTP()" class="w-full bg-gray-500 text-white p-2 rounded hover:bg-gray-600">Resend OTP</button>
+        </div>
+        <p id="error" class="text-red-500 text-center mt-4"></p>
+    </div>
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>
